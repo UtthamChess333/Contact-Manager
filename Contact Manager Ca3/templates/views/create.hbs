@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Account</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+    {{>header}}
+    <div class="container">
+        <h1>Add Contact</h1>
+        <form action="/create" method="POST">
+            <div class="form-group">
+                <label for="username">Name:</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="balance">Phone:</label>
+                <input type="text" class="form-control" id="balance" name="balance" required pattern="[0-9]{10}" title="Please enter a 10-digit phone number">
+                <small class="form-text text-muted">Please enter a 10-digit phone number.</small>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="note">Note:</label>
+                <input type="text" class="form-control" id="note" name="note" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Add Contact</button>
+        </form>
+        <a href="/list" class="btn btn-secondary">List Contacts</a>
+    </div>
+    {{>footer}}
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

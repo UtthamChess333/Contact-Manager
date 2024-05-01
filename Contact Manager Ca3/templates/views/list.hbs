@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>List Accounts</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+    {{>header}}
+    <div class="container">
+        <h1>List Contacts</h1>
+        <ul class="list-group">
+            {{#each accounts}}
+                <li class="list-group-item">
+                    <strong>Name:</strong> {{this.name}}<br>
+                    <strong>Phone:</strong> {{this.phone}}<br>
+                    <strong>Email:</strong> {{this.email}}<br>
+                    <strong>Note:</strong> {{this.note}}
+                </li>
+            {{/each}}
+        </ul>
+        <a href="/create" class="btn btn-primary mt-3">Add Contact</a>
+    </div>
+    {{>footer}}
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!-- views/delete.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Account</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+    {{>header}}
+    <div class="container">
+        <h1>Remove Contact</h1>
+        <form action="/delete" method="POST">
+            <div class="form-group">
+                <label for="username">Name:</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <button type="submit" class="btn btn-danger">Remove Contact</button>
+        </form>
+        <a href="/create" class="btn btn-primary">Create Account</a>
+    </div>
+    {{>footer}}
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+{{!-- <body>
+    {{>header}}
+    <div class="container">
+        <h1>Remove Contact</h1>
+        <form action="/delete" method="POST">
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="phone" required>
+            <!-- or for note -->
+            <!-- <label for="note">Note:</label>
+            <input type="text" id="note" name="note" required> -->
+            <button type="submit">Remove Contact</button>
+        </form>
+        <a href="/create">Create Account</a>
+    </div>
+    {{>footer}}
+</body> --}}
+

@@ -1,0 +1,39 @@
+<!-- views/balance.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Check Balance</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+    {{>header}}
+    <div class="container">
+        <h1>Edit Contact</h1>
+        <form action="/select-contact" method="POST">
+            <label for="contact">Select Contact:</label>
+            <select id="contact" name="contact">
+                {{#each contacts}}
+                    <option value="{{this.id}}">{{this.name}}</option>
+                {{/each}}
+            </select>
+            <button type="submit">Edit Contact</button>
+        </form>
+        {{#if contact}}
+        <form action="/update" method="POST">
+            <label for="username">Name:</label>
+            <input type="text" id="username" name="username" value="{{contact.name}}" required>
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="phone" value="{{contact.phone}}" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="{{contact.email}}" required>
+            <label for="note">Note:</label>
+            <input type="text" id="note" name="note" value="{{contact.note}}" required>
+            <button type="submit">Save Changes</button>
+        </form>
+        {{/if}}
+    </div>
+    {{>footer}}
+</body>
+
+
+</html>
